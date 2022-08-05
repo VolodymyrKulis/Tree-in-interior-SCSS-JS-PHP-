@@ -1,0 +1,132 @@
+.wrapper {
+  font-size: 18px;
+  margin: auto;
+  margin-top: 40px;
+}
+.form {
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.form * {
+  outline: none;
+}
+.form__body {
+  width: 450px;
+  position: relative;
+}
+.form__body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: rgba(51,52,51,0.6) url('../img/3.gif') center / 200px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+.form__body.wait::after {
+  opacity: 1;
+  visibility: visible;
+}
+.form__item {
+  margin: 0 0 18px;
+}
+.form__input {
+  font-weight: bold;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 5px;
+  width: 100%;
+  transition: all 0.5s ease 0s;
+  border-color: transparent;
+  background-color: rgba(232, 240, 254,0.9);
+}
+.form__input::placeholder {
+  color: #525252;
+}
+input, textarea {
+    color: #006970;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: inset rgba(232, 240, 254,0.9);
+    -webkit-text-fill-color: #006970;
+}
+.form__input:focus {
+  box-shadow: 0 0 20px rgba(232, 62, 142, 0.4);
+}
+.form__input.error {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+textarea.form__input {
+  min-height: 100px;
+  resize: vertical;
+  padding: 20px;
+}
+.form__button {
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: transparent;
+  color: #525252;
+  font-weight: bold;
+  background: rgba(232, 240, 254,0.7);
+  min-height: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.5s ease 0s;
+  position: relative;
+  top: 0;
+}
+.form__button:hover {
+  color: #006970;
+  background: rgba(232, 240, 254,1);
+}
+.form__button:active {
+  top: 3px;
+}
+
+@media screen and (max-width:991px) {
+  .wrapper {
+    margin: auto;
+    margin-top: 0;
+  }
+  .form__body {
+    width: 350px;
+  }
+  .form__item {
+    margin: 0 0 11px;
+  }
+  .form__input {
+    height: 28px;
+  }
+  .form__button {
+    height: 28px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .form__item {
+    margin: 0 0 18px;
+  }
+  .form__input {
+    height: 35px;
+  }
+  .form__button {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .form__body {
+    width: 320px;
+  }
+}
